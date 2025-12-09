@@ -5,23 +5,23 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #331F19; 
+    background: linear-gradient(to right, #504c4b, #868280); 
 }
 .container {
     text-align: center;
-    background-color: #CBBBA7;
+    background-color: #504c4b;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 90%;
     max-width: 600px;
-    border: 2px solid #8B7D70;
+
 }
 h1 {
-    color: #331F19;
+    color: white;
 }
 p {
-    color: #331F19;
+    color: #60041A;
     font-size: 1.1em;
 }
 button {
