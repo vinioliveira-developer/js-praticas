@@ -22,7 +22,7 @@ Olá João
 
 # Observações importantes
 
-O valor pode ser alterado depois se você usar let.
+O valor pode ser alterado depois se usar let.
 
 Variáveis ajudam a evitar repetição desnecessária.
 

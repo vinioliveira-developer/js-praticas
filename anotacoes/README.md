@@ -1,1 +1,1 @@
-# Pasta destinada aos mini projetos em JavaScript.
+# Anotações e resumos importantes sobre meus estudos de JavaScript.
