@@ -71,6 +71,9 @@ function editarTarefa(i) { // Função para editar uma tarefa existente
    if (tarefaEditada.trim() !== "") { // Verifica se o valor editado não está vazio
         tarefas[i] = tarefaEditada; // Atualiza a tarefa no array
         renderizarTarefas();
+        const mensagem = document.getElementById("mensagem"); // Pega o elemento de mensagem
+        mensagem.textContent = "Tarefa editada com sucesso!"; // Exibe mensagem de sucesso
+        mensagem.style.color = '#28A745';
    }
 }
 
