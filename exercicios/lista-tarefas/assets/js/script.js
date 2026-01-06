@@ -39,10 +39,46 @@ function renderizarTarefas() {
         
         // Loop através do array de tarefas e cria um item de lista para cada tarefa
         for (let i = 0; i < tarefas.length; i++) {
-        let novaTarefa = document.createElement("li");
-        novaTarefa.textContent = tarefas[i];
-        listaTarefas.appendChild(novaTarefa);
+            let novaTarefa = document.createElement("li");
+            novaTarefa.textContent = tarefas[i];
+
+            let bortaoRemover = document.createElement("button"); 
+            bortaoRemover.className = "botao-remover";
+            bortaoRemover.textContent = "Remover";
+            bortaoRemover.onclick = () => removerTerefa(i);
+
+            let botaoEditar = document.createElement("button");
+            botaoEditar.className = "botao-editar";
+            botaoEditar.textContent = "Editar";
+            botaoEditar.onclick = () => editarTarefa(i);
+
+            novaTarefa.appendChild(bortaoRemover);
+            novaTarefa.appendChild(botaoEditar);
+            listaTarefas.appendChild(novaTarefa);
         }
 }
 
+function removerTerefa(i) { // função para remover a tarefa do array pelo índice
+    tarefas.splice(i, 1); // Remove 1 item na posição i
+    renderizarTarefas(); // Atualiza a exibição da lista
+    const mensagem = document.getElementById("mensagem"); // Pega o elemento de mensagem
+    mensagem.textContent = "Tarefa removida com sucesso!"; // Exibe mensagem de sucesso
+    mensagem.style.color = '#28A745';
+}
+
+function editarTarefa(i) { // Função para editar uma tarefa existente
+   let tarefaEditada= prompt("Edite sua tarefa:"); // Pede ao usuário para editar a tarefa abrindo um prompt
+   if (tarefaEditada.trim() !== "") { // Verifica se o valor editado não está vazio
+        tarefas[i] = tarefaEditada; // Atualiza a tarefa no array
+        renderizarTarefas();
+   }
+}
+
+function limparTarefas() { // Função para limpar todas as tarefas
+    tarefas.length = 0; // Limpa o array de tarefas
+    renderizarTarefas(); 
+    const mensagem = document.getElementById("mensagem");
+    mensagem.textContent = "Todas as tarefas foram limpas!"; 
+    mensagem.style.color = '#28A745';
+}    
 // vermelho #A34743, VERDE #28A745
